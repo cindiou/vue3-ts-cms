@@ -79,8 +79,11 @@ class DioRequest {
 
   private static dealError(prefix: string) {
     return function (error: any): any {
+      // eslint-disable-next-line
       console.error(`${prefix}Error==start`);
+      // eslint-disable-next-line
       console.log(error);
+      // eslint-disable-next-line
       console.error(`${prefix}Error==end`);
     };
   }

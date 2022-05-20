@@ -63,8 +63,8 @@ export default defineComponent({
   },
   emits: ["selectionChange"],
   /* eslint-disable-next-line */
-  setup(props,{emit}) {
-    console.log("props.tableData", props.tableData);
+  setup(props, { emit }) {
+    // console.log("props.tableData", props.tableData);
 
     const handleSelectionChange = (value: any) => {
       emit("selectionChange", value);
