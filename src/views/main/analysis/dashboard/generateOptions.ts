@@ -211,7 +211,7 @@ export const generateMapOptions = (data: any): EChartsOption => {
       map: "china",
       roam: "scale",
       emphasis: {
-        areaColor: "#f4cccc",
+        // areaColor: "#f4cccc",
         borderColor: "rgb(9, 54, 95)",
         itemStyle: {
           areaColor: "#f4cccc",
