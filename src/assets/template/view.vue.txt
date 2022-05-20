@@ -1,0 +1,16 @@
+<template>
+  <div class="{{NAME}}">{{NAME}}</div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name:{{NAME}},
+  setup() {
+    return {};
+  },
+});
+</script>
+
+<style scoped lang="scss"></style>

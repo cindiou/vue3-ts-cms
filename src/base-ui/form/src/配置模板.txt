@@ -1,0 +1,115 @@
+const searchForm: IForm = {
+  formProps: {
+    labelWidth: "90px",
+  },
+  commonRowProps: {},
+  commonColProps: {
+    span: 8,
+    xs: 24,
+    xl: 6,
+    lg: 8,
+    md: 8,
+    sm: 1,
+  },
+  rows: [
+    {
+      curRowProps: {},
+      cols: [
+        {
+          itemColProps: {},
+          itemFormProps: {
+            label: "id",
+          },
+          itemProps: {
+            is: "ElInput",
+            props: {
+              placeholder: "请输入用户ID~",
+            },
+          },
+          itemEvents: {},
+        },
+        {
+          itemFormProps: {
+            label: "用户名",
+          },
+          itemProps: {
+            is: "ElInput",
+            props: {
+              placeholder: "请输入用户名~",
+            },
+          },
+        },
+        {
+          itemFormProps: {
+            label: "真实姓名",
+          },
+          itemProps: {
+            is: "ElInput",
+            props: {
+              placeholder: "请输入用户真实姓名~",
+            },
+          },
+        },
+      ],
+    },
+    {
+      curRowProps: {},
+      cols: [
+        {
+          itemFormProps: {
+            label: "电话号码",
+          },
+          itemProps: {
+            is: "ElInput",
+            props: {
+              placeholder: "请输入用户电话号码~",
+            },
+          },
+        },
+        {
+          itemFormProps: {
+            label: "状态",
+          },
+          itemProps: {
+            is: "ElInput",
+            props: {
+              placeholder: "请输入用户状态~",
+            },
+          },
+        },
+      ],
+    },
+    {
+      curRowProps: {
+        justify: "end",
+      },
+      inOneCol: true,
+      cols: [
+        {
+          itemProps: {
+            is: "ElButton",
+            props: {
+              type: "info",
+              size: "middle",
+              icon: "el-icon-refresh",
+            },
+            children: "重置",
+          },
+        },
+        {
+          itemProps: {
+            is: "ElButton",
+            props: {
+              type: "primary",
+              size: "middle",
+              icon: "el-icon-search",
+            },
+            children: "查询",
+          },
+        },
+      ],
+    },
+  ],
+};
+
+export default searchForm;

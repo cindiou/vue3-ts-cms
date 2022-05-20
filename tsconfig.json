@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    // "module": "commonjs",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -17,7 +18,13 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "components/*":["src/components/*"],
+      "assets/*":["src/assets/*"],
+      "views/*":["src/views/*"],
+      "utils/*":["src/utils/*"],
+      "store/*":["src/store/*"],
+      "services/*":["src/services/*"],
     },
     "lib": [
       "esnext",

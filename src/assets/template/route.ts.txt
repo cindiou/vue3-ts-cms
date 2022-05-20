@@ -1,0 +1,6 @@
+export default {
+  name:{{NAME}},
+  path:/main/{{PATH1}}/{{PATH2}},
+  component:()=>import({{"components/main/{{PATH1}}/{{PATH2}}/{{NAME}}.vue"}}),
+  children: [],
+}
