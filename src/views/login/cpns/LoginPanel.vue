@@ -20,12 +20,11 @@
       <el-checkbox v-model="isKeepPassword">记住密码</el-checkbox>
       <el-link type="primary">忘记密码</el-link>
     </div>
-
-    <el-button type="warning" class="login-in" @click="unpwLogin"
-      >游客登录</el-button
-    >
     <el-button type="primary" class="login-in" @click="login"
       >立即登录</el-button
+    >
+    <el-button type="warning" class="login-in" @click="unpwLogin"
+      >游客登录</el-button
     >
   </div>
 </template>
