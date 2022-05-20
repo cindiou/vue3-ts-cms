@@ -21,6 +21,9 @@
       <el-link type="primary">忘记密码</el-link>
     </div>
 
+    <el-button type="warning" class="login-in" @click="unpwLogin"
+      >游客登录</el-button
+    >
     <el-button type="primary" class="login-in" @click="login"
       >立即登录</el-button
     >
@@ -54,9 +57,14 @@ export default defineComponent({
       }
     };
 
+    const unpwLogin = () => {
+      accountRef.value?.loginByAccount(null, true);
+    };
+
     return {
       isKeepPassword,
       login,
+      unpwLogin,
       accountRef,
       phoneRef,
       curTab,
@@ -82,6 +90,9 @@ export default defineComponent({
   .login-in {
     width: 100%;
     margin-top: 10px;
+  }
+  .login-in + .login-in {
+    margin-left: 0px;
   }
 }
 </style>

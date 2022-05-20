@@ -23,12 +23,19 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const account = reactive({
-      name: cache.get("name") ?? "",
-      password: cache.get("password") ?? "",
+      name: cache.get("name") || "",
+      password: cache.get("password") || "",
     });
     const formRef = ref<InstanceType<typeof ElForm>>();
 
-    const loginByAccount = (payload: any) => {
+    const loginByAccount = (payload: any, skipCheck = false) => {
+      if (skipCheck) {
+        store.dispatch("login/accountLoginAction", {
+          name: "coderwhy",
+          password: "123456",
+        });
+        return;
+      }
       formRef.value?.validate((valid) => {
         if (valid) {
           //1.存储登录信息到本地
