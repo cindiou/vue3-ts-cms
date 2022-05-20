@@ -3,6 +3,14 @@
     {
       "source": "/backend/(.*)",
       "destination": "/api/proxy"
+    },
+    {
+      "source": "/test/(.*)",
+      "destination": "/api/test"
+    },
+    {
+      "source": "/reg/(.*)",
+      "destination": "/api/\\1"
     }
   ]
 }
