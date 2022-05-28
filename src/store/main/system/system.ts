@@ -20,8 +20,13 @@ const systemModule: Module<ISystemState, IRootState> = {
       roleCount: 0,
       menuList: [],
       menuCount: 0,
+      departmentCount: 0,
+      departmentList: [],
+
       goodsList: [],
       goodsCount: 0,
+      categoryCount: 0,
+      categoryList: [],
 
       queryData: {
         queryInfo: {
@@ -51,11 +56,24 @@ const systemModule: Module<ISystemState, IRootState> = {
     changeMenuCount(state, menuCount: number) {
       state.menuCount = menuCount;
     },
+    changeDepartmentList(state, departmentList: any[]) {
+      state.departmentList = departmentList;
+    },
+    changeDepartmentCount(state, departmentCount: number) {
+      state.departmentCount = departmentCount;
+    },
+
     changeGoodsList(state, goodsList: any[]) {
       state.goodsList = goodsList;
     },
     changeGoodsCount(state, goodsCount: number) {
       state.goodsCount = goodsCount;
+    },
+    changeCategoryList(state, categoryList: any[]) {
+      state.categoryList = categoryList;
+    },
+    changeCategoryCount(state, categoryCount: number) {
+      state.categoryCount = categoryCount;
     },
 
     changeQueryData(state, queryData: any) {
@@ -72,8 +90,13 @@ const systemModule: Module<ISystemState, IRootState> = {
             return state.roleList;
           case "menu":
             return state.menuList;
+          case "department":
+            return state.departmentList;
+
           case "goods":
             return state.goodsList;
+          case "category":
+            return state.categoryList;
         }
       };
     },
@@ -86,8 +109,13 @@ const systemModule: Module<ISystemState, IRootState> = {
             return state.roleCount;
           case "menu":
             return state.menuCount;
+          case "department":
+            return state.departmentCount;
+
           case "goods":
             return state.goodsCount;
+          case "category":
+            return state.categoryCount;
         }
       };
     },

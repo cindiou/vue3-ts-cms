@@ -7,6 +7,8 @@ import {
   getGoodsCountRequest,
   getGoodsFavorRequest,
   getGoodsSaleRequest,
+  getAmountList,
+  getGoodsSaleTop10,
 } from "@/services/request/DashBoard.service";
 
 const systemModule: Module<IDashboardState, IRootState> = {
@@ -17,6 +19,9 @@ const systemModule: Module<IDashboardState, IRootState> = {
       categoryGoodsFavor: [],
       categoryGoodsSale: [],
       addressGoodsSale: [],
+
+      topPanelDatas: null,
+      goodsSaleTop10: [],
     };
   },
   mutations: {
@@ -32,9 +37,23 @@ const systemModule: Module<IDashboardState, IRootState> = {
     changeAddressGoodsSale(state, addressGoodsSale) {
       state.addressGoodsSale = addressGoodsSale;
     },
+    changeTopPanelDatas(state, list) {
+      state.topPanelDatas = list;
+    },
+    changeGoodsSaleTop10(state, list) {
+      state.goodsSaleTop10 = list;
+    },
   },
   actions: {
     async getDashBoardAction({ commit }) {
+      const resultTopPanelDatas = await getAmountList();
+      commit("changeTopPanelDatas", resultTopPanelDatas);
+
+      const saleTop10 = await getGoodsSaleTop10();
+      commit("changeGoodsSaleTop10", saleTop10);
+
+      // ===============
+
       const goodsCountResult = await getGoodsCountRequest();
       commit("changeCategoryGoodsCount", goodsCountResult.data);
 

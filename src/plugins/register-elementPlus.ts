@@ -37,6 +37,8 @@ import {
   ElOption,
   ElScrollbar,
   ElCard,
+  ElDescriptions,
+  ElDescriptionsItem,
 } from "element-plus"; //导入需要用到组件，在全局注册
 
 export const Components = [
@@ -76,6 +78,8 @@ export const Components = [
   ElOption,
   ElScrollbar,
   ElCard,
+  ElDescriptions,
+  ElDescriptionsItem,
 ];
 
 export default function (app: App): void {

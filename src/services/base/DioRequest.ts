@@ -74,7 +74,8 @@ class DioRequest {
 
   private static responseSuccess(res: AxiosResponse) {
     // console.log("响应成功拦截");
-    return res.data;
+    // console.log("res====>", res);
+    return res && res.data;
   }
 
   private static dealError(prefix: string) {

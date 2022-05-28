@@ -1,9 +1,13 @@
 <template>
   <div class="dashboard">
     <!-- 顶部动态数据 -->
-    <div class="dashboard-header">
-      <el-row></el-row>
-    </div>
+    <el-row :gutter="10">
+      <template v-for="item in topPanelData" :key="item.title">
+        <el-col :md="12" :lg="6" :xl="6">
+          <statistical-panel :panelData="item" />
+        </el-col>
+      </template>
+    </el-row>
 
     <!-- 中间echarts图 -->
     <div class="dashboard-main">
@@ -62,12 +66,15 @@
 import { defineComponent } from "vue";
 
 import { useDashBoard } from "./DashBoard.config";
+
 import { BaseEcharts } from "@/base-ui/base-echarts";
+import StatisticalPanel from "@/components/statistical-panel";
 
 export default defineComponent({
   name: "dashboard",
   components: {
     BaseEcharts,
+    StatisticalPanel,
   },
   setup() {
     const {
@@ -76,6 +83,9 @@ export default defineComponent({
       BrokenLineOptions,
       BarOptions,
       MapOptions,
+
+      topPanelData,
+      goodsSaleTop10,
     } = useDashBoard();
 
     return {
@@ -84,6 +94,9 @@ export default defineComponent({
       BrokenLineOptions,
       BarOptions,
       MapOptions,
+
+      topPanelData,
+      goodsSaleTop10,
     };
   },
 });

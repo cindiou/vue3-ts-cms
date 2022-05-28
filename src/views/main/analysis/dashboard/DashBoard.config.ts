@@ -14,6 +14,19 @@ export function useDashBoard() {
   const store = useStore();
   store.dispatch("analysis/getDashBoardAction");
 
+  const topPanelData = computed(() => {
+    const res = store.state.analysis.topPanelDatas;
+    // console.log("res=", res && res.data);
+    return res && res.data;
+  });
+  const goodsSaleTop10 = computed(() => {
+    return store.state.analysis.goodsSaleTop10.map((item: any) => {
+      return { value: item.saleCount, name: item.name };
+    });
+  });
+
+  // =====================
+
   const PieOptions = computed(() => {
     const goodsCount = store.state.analysis.categoryGoodsCount.map(
       (item: any) => {
@@ -79,5 +92,8 @@ export function useDashBoard() {
     BrokenLineOptions,
     BarOptions,
     MapOptions,
+
+    topPanelData,
+    goodsSaleTop10,
   };
 }

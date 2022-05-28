@@ -48,6 +48,8 @@ export default defineComponent({
   top: 0;
   width: 100%;
   height: 100%;
+
+  /* background-color: red; */
 }
 
 .main-content,
@@ -57,6 +59,8 @@ export default defineComponent({
 
 .page-content {
   height: calc(100%-48px);
+  /* overflow:visible !important; */
+
   .page-main {
     background-color: #fff;
     border-radius: 5px;

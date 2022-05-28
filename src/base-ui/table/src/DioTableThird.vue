@@ -25,7 +25,7 @@
         {{ $filters.formatUTC(scope.updateAt) }}
       </template>
       <!-- eslint-disable-next-line -->
-      <template #handle="{scope}">
+      <template #handle="{ scope }">
         <div class="user-control">
           <el-button
             type="text"
@@ -148,7 +148,7 @@ export default defineComponent({
       return store.getters["system/pageListGetters"](urlPrefix);
     });
     const count = computed(() => {
-      return store.getters["system/pageCountGetters"](urlPrefix);
+      return store.getters["system/pageCountGetters"](urlPrefix) || 0;
     });
 
     const handleDeleteClick = (info: any) => {

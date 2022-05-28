@@ -106,7 +106,8 @@ export default defineComponent({
   },
   emits: ["selectionChange", "update:pageInfo"],
   /* eslint-disable-next-line */
-  setup(props,{emit}) {
+  setup(props, { emit }) {
+    console.log("props=", props);
 
     const handleSelectionChange = (value: any) => {
       emit("selectionChange", value);

@@ -1,0 +1,79 @@
+import type { IForm } from "@/base-ui/form";
+import { ref } from "vue";
+
+//双向绑定，获取searchForm中用户输入的数据
+const formData = ref({
+  name: "",
+  leader: "",
+  createAt: "",
+});
+
+const searchForm: IForm = {
+  formProps: {
+    labelWidth: "90px",
+  },
+  commonRowProps: {},
+  commonColProps: {
+    span: 8,
+    xs: 24,
+    xl: 6,
+    lg: 8,
+    md: 12,
+    sm: 12,
+  },
+  rows: [
+    {
+      curRowProps: {},
+      cols: [
+        {
+          itemColProps: {},
+          itemFormProps: {
+            label: "部门名称",
+          },
+          itemProps: {
+            is: "ElInput",
+            field: "name",
+            props: {
+              size: "mini",
+              placeholder: "请输入部门名称~",
+            },
+          },
+          itemEvents: {},
+        },
+        {
+          itemFormProps: {
+            label: "部门领导",
+          },
+          itemProps: {
+            is: "ElInput",
+            field: "leader",
+            props: {
+              size: "mini",
+              placeholder: "请输入部门领导~",
+            },
+          },
+        },
+        {
+          itemFormProps: {
+            label: "创建日期",
+          },
+          itemProps: {
+            is: "ElDatePicker",
+            field: "createAt",
+            props: {
+              size: "mini",
+              type: "datetimerange",
+              format: "YYYY-MM-DD",
+              // "range-separator": "-",
+              "start-placeholder": "开始日期",
+              "end-placeholder": "结束日期",
+              style: "width:100%", //border:1px solid red;
+            },
+          },
+        },
+      ],
+    },
+  ],
+};
+
+export { formData as modelFormFields, searchForm as formData };

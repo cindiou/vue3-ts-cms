@@ -3,7 +3,7 @@
     <el-dropdown>
       <span class="el-dropdown-link">
         <el-avatar :src="avatarUrl" size="small"></el-avatar>
-        <span class="header-panel-title">面板</span>
+        <span class="header-panel-title text-overflow">{{ name }}</span>
       </span>
       <template #dropdown>
         <el-dropdown-menu>
@@ -61,5 +61,10 @@ export default defineComponent({
     display: flex;
     align-items: center;
   }
+}
+
+.header-panel-title {
+  display: inline-block;
+  width: 80px;
 }
 </style>

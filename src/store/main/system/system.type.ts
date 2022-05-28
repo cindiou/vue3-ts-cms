@@ -8,6 +8,11 @@ export interface ISystemState {
   goodsList: any[];
   goodsCount: number;
 
+  departmentList: any[];
+  departmentCount: number;
+  categoryList: any[];
+  categoryCount: number;
+
   queryData: {
     queryInfo: any;
     isInSearch: boolean;
